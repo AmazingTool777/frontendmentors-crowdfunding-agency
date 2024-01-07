@@ -1,0 +1,35 @@
+/* Color properties in HSL values */
+:root {
+    --primary-color: 176, 50%, 47%;
+    --primary-color-dark: 176, 72%, 28%;
+
+    --neutral-color: 0, 0%, 0%;
+    --neutral-color-light: 0, 0%, 48%;
+}
+
+
+/* Typography */
+
+:root {
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: Commissioner;
+    src: url("../assets/fonts/Commissioner/static/Commissioner-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: Commissioner;
+    src: url("../assets/fonts/Commissioner/static/Commissioner-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Commissioner;
+    src: url("../assets/fonts/Commissioner/static/Commissioner-Bold.ttf");
+    font-weight: 700;
+}
+
+body {
+    font-family: Commissioner;
+}

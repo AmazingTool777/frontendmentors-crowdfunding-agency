@@ -1,0 +1,28 @@
+/* Typography */
+
+.text-primary {
+    color: hsl(var(--primary-color));
+}
+
+.text-neutral {
+    background-color: hsl(var(--neutral-color));
+}
+.text-neutral-dark {
+    background-color: hsl(var(--neutral-color-dark));
+}
+
+/* Backgrounds */
+
+.bg-primary {
+    background-color: hsl(var(--primary-color));
+}
+.bg-primary-dark {
+    background-color: hsl(var(--primary-color-dark));
+}
+
+.bg-neutral {
+    background-color: hsl(var(--neutral-color));
+}
+.bg-neutral-light {
+    background-color: hsl(var(--neutral-color-light));
+}
