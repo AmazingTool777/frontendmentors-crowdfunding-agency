@@ -1,6 +1,6 @@
 @import url("./navbar.css");
 
-.header-banner {
+img.header-banner {
   display: block;
   width: 100%;
   object-fit: cover;
@@ -9,5 +9,103 @@
 
   @media only screen and (min-width: 768px) {
     height: clamp(21.875rem, 27vw, 25rem);
+  }
+}
+
+.header-intro {
+  --negative-margin-top: -3.5rem; /* 56px */
+  --mastercraft-logo-margin-bottom: 1.5rem; /* 24px */
+  --title-font-size: 1.25rem; /* 20px */
+  --title-margin-bottom: 1.125rem; /* 24px */
+  --description-margin-bottom: 1.5rem; /* 24px */
+
+  margin-top: var(--negative-margin-top);
+  position: relative;
+  z-index: 1;
+  padding-top: 0;
+
+  @media only screen and (min-width: 640px) {
+    --negative-margin-top: -4.0625rem; /* 65px */
+    --title-font-size: 1.5rem; /* 24px */
+    --description-margin-bottom: 1.75rem; /* 28px */
+  }
+  @media only screen and (min-width: 768px) {
+    --negative-margin-top: -4.625rem; /* 74px */
+    --mastercraft-logo-margin-bottom: 1.675rem; /* 26px */
+    --title-font-size: 1.675rem; /* 26px */
+    --title-margin-bottom: 1.25rem; /* 20px */
+    --description-margin-bottom: 2rem; /* 32px */
+  }
+  @media only screen and (min-width: 1024px) {
+    --negative-margin-top: -5.1875rem; /* 83px */
+    --mastercraft-logo-margin-bottom: 1.75rem; /* 28px */
+    --title-font-size: 1.75rem; /* 28px */
+    --title-margin-bottom: 0.875rem;
+    --description-margin-bottom: 2.5rem; /* 36px */
+  }
+  @media only screen and (min-width: 1280px) {
+    --negative-margin-top: -5.75rem; /* 92px */
+  }
+
+  .header-intro__mastercraft-logo {
+    margin-top: -28px;
+    margin-bottom: var(--mastercraft-logo-margin-bottom);
+  }
+
+  h1 {
+    font-size: var(--title-font-size);
+    margin-bottom: var(--title-margin-bottom);
+  }
+
+  .description {
+    margin-bottom: var(--description-margin-bottom);
+  }
+}
+
+.bookmark-btn {
+  border: none;
+  background-color: #f4f4f4;
+  padding: 0;
+  border-radius: 1.75rem;
+  overflow: hidden;
+
+  &,
+  & * {
+    transition: 0.4s;
+  }
+
+  &::after {
+    content: "Bookmark";
+    padding-left: 1rem;
+    padding-right: 1.75rem;
+    color: hsl(var(--neutral-color-light));
+    font-weight: 700;
+    display: none;
+  }
+
+  @media screen and (min-width: 540px) {
+    &::after {
+      display: inline-block;
+    }
+  }
+
+  &.bookmark-btn--marked {
+    &::after {
+      content: "Bookmarked";
+      color: hsl(var(--primary-color-dark));
+    }
+
+    .bookmark-btn__icon {
+      circle {
+        fill: hsl(var(--primary-color-dark));
+      }
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }

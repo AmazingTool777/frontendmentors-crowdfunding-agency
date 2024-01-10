@@ -1,5 +1,6 @@
-import { setupNavbarMenu } from "./components/navbar-menu.js"
-import { setupOverlay } from "./components/overlay.js"
+import { renderBookmarkButton } from "./bookmark.js";
+import { setupNavbarMenu } from "./components/navbar-menu.js";
+import { setupOverlay } from "./components/overlay.js";
 
 const overlay = setupOverlay({
   element: () => {
@@ -9,7 +10,7 @@ const overlay = setupOverlay({
   },
   onClick() {
     navbarMenu.close();
-  }
+  },
 });
 
 const navbarMenu = setupNavbarMenu({
@@ -35,5 +36,7 @@ const navbarMenu = setupNavbarMenu({
     img.setAttribute("src", "assets/img/icon-hamburger.svg");
     img.setAttribute("alt", "Hamburger menu");
   },
-  animated: true
+  animated: true,
 });
+
+renderBookmarkButton();
