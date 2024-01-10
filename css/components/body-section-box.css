@@ -1,0 +1,25 @@
+.body-section-box {
+  --padding-x: 1.5rem; /* 24px */
+  --padding-y: 2.375rem; /* 38px */
+
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: var(--padding-y) var(--padding-x);
+
+  @media only screen and (min-width: 640px) {
+    --padding-y: 2.5rem; /* 40px */
+  }
+  @media only screen and (min-width: 768px) {
+    --padding-x: 2rem; /* 32px */
+    --padding-y: 2.625rem; /* 42px */
+  }
+  @media only screen and (min-width: 1024px) {
+    --padding-x: 2.4375rem; /* 39px */
+    --padding-y: 2.75rem; /* 44px */
+  }
+  @media only screen and (min-width: 1280px) {
+    --padding-x: 2.875rem; /* 46px */
+    --padding-y: 3rem; /* 48px */
+  }
+}

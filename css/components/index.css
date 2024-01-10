@@ -1,0 +1,13 @@
+@import url("./button.css");
+@import url("./body-section-box.css");
+
+p.description {
+  color: hsl(var(--neutral-color-light));
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}

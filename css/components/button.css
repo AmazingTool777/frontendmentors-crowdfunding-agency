@@ -1,0 +1,27 @@
+button.btn {
+  --button-height: 3.5rem; /* 56px */
+  --button-padding-x: 1.25rem; /* 20px */
+  --button-font-size: 1rem;
+
+  border: none;
+  border-radius: calc(var(--button-height) / 2);
+  background-color: hsl(var(--primary-color));
+  color: #fff;
+  font-weight: 700;
+  padding: 0 calc(var(--button-padding-x) + var(--button-height) / 2);
+  display: flex;
+  align-items: center;
+  height: var(--button-height);
+  font-size: var(--button-font-size);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: hsl(var(--primary-color-dark));
+  }
+
+  &.btn--small {
+    --button-height: 3rem; /* 48px */
+    --button-padding-x: 0.75rem; /* 12px */
+    --button-font-size: 0.875rem; /* 14px */
+  }
+}
