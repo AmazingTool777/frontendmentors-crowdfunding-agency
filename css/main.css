@@ -2,4 +2,6 @@
 @import url("./globals.css");
 @import url("./utils.css");
 @import url("./components/index.css");
+
 @import url("./features/header.css");
+@import url("./features/statistics.css");

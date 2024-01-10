@@ -1,0 +1,92 @@
+.statistics {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  margin-bottom: var(--box-section-padding-y);
+
+  .statistics__cell {
+    position: relative;
+
+    strong {
+      display: inline-block;
+      font-size: 2rem; /* 32px */
+      color: hsl(var(--neutral-color));
+      margin-bottom: 0.625rem; /* 10px */
+    }
+
+    p {
+      text-align: center;
+      color: hsl(var(--neutral-color-light));
+      font-size: 0.875rem; /* 14px */
+
+      @media screen and (min-width: 768px) {
+        font-size: 0.9375rem; /* 15px */
+      }
+    }
+
+    &:not(:first-child)::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 5.125rem; /* 82px */
+      background-color: #d8d8d8;
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &:not(:first-child) {
+      padding-top: 1.625rem; /* 26px */
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: 2rem;
+
+    .statistics__cell {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      p {
+        width: fit-content;
+        text-align: left;
+      }
+
+      &:not(:first-child)::after {
+        width: 1px;
+        height: 4rem;
+        top: unset;
+        bottom: 0;
+        right: 100%;
+        transform: translateX(0) translateY(-0.25rem);
+      }
+
+      &:not(:first-child) {
+        padding-left: var(--box-section-padding-x);
+      }
+    }
+  }
+}
+
+.backing-progressbar {
+  --backing-progressbar-height: 0.75rem;
+
+  height: var(--backing-progressbar-height);
+  border-radius: calc(var(--backing-progressbar-height) / 2);
+  overflow: hidden;
+  background-color: #f4f4f4;
+  transition: width 0.4s;
+
+  .backing-progressbar__inner {
+    height: 100%;
+    border-radius: calc(var(--backing-progressbar-height) / 2);
+    background-color: hsl(var(--primary-color));
+  }
+}
