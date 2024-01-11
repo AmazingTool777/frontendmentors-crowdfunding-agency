@@ -19,6 +19,11 @@ button.btn {
     background-color: hsl(var(--primary-color-dark));
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    background-color: hsl(var(--neutral-color-light));
+  }
+
   &.btn--small {
     --button-height: 3rem; /* 48px */
     --button-padding-x: 0.75rem; /* 12px */

@@ -1,0 +1,126 @@
+.about-section {
+  padding-top: 2.375rem; /* 38px */
+  margin-bottom: 4.5rem; /* 72px */
+
+  @media screen and (min-width: 640px) {
+    margin-bottom: 5.3125rem; /* 85px */
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 6.125rem; /* 98px */
+  }
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 6.9375rem; /* 111px */
+    padding-top: 3rem; /* 48px */
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 7.75rem; /* 124px */
+  }
+
+  h2 {
+    color: hsl(var(--neutral-color));
+    font-size: 1.1875rem; /* 19px */
+    margin-bottom: 1.5rem; /* 22px */
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1.25rem; /* 20px */
+      margin-bottom: 2rem; /* 16px */
+    }
+  }
+
+  .about-section__description {
+    margin-bottom: 1.625rem; /* 32px */
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 2rem; /* 34px */
+    }
+  }
+
+  .about-section__articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* 24px */
+    padding-top: 0.5rem; /* 8px */
+  }
+}
+
+.pledge-card {
+  border-radius: 0.5rem;
+  border: 1px solid #dbdbdb;
+  padding: 1.5rem;
+
+  .pledge-card__header,
+  .pledge-card__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pledge-card__header {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem; /* 24px */
+  }
+
+  .pledge-card__title {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .pledge-card__amount {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .pledge-card__description {
+    margin-bottom: 1.5rem; /* 24px */
+  }
+
+  .pledge-card__footer {
+    gap: 1.5rem; /* 24px */
+  }
+
+  .pledge-card__quantity {
+    color: hsl(var(--neutral-color-light));
+    font-size: 0.9375rem; /* 15px */
+    gap: 0.5rem;
+
+    strong {
+      font-weight: 700;
+      color: hsl(var(--neutral-color));
+      font-size: 2rem; /* 32px */
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 1.75rem 1.5rem 1.5rem;
+
+    .pledge-card__header,
+    .pledge-card__footer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 1.75rem 1.75rem;
+
+    .pledge-card__title {
+      font-size: 1rem;
+    }
+
+    .pledge-card__amount {
+      font-size: 0.9375rem; /* 15px */
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 2.25rem 2rem;
+
+    .pledge-card__title {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+
+  &.pledge-card--out-of-stock {
+    opacity: 0.5;
+  }
+}
