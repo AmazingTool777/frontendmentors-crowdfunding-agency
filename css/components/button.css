@@ -1,6 +1,6 @@
 button.btn {
   --button-height: 3.5rem; /* 56px */
-  --button-padding-x: 1.25rem; /* 20px */
+  --button-padding-x: calc(var(--button-height) / 2);
   --button-font-size: 1rem;
 
   border: none;
@@ -8,12 +8,22 @@ button.btn {
   background-color: hsl(var(--primary-color));
   color: #fff;
   font-weight: 700;
-  padding: 0 calc(var(--button-padding-x) + var(--button-height) / 2);
+  padding: var(--button-padding-x);
   display: flex;
   align-items: center;
   height: var(--button-height);
   font-size: var(--button-font-size);
   transition: 0.3s;
+  max-width: 13.375rem; /* 214px */
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 372px) {
+    --button-padding-x: 1.125rem; /* 18px */
+
+    padding: 0 calc(var(--button-padding-x) + var(--button-height) / 2);
+    max-width: none;
+  }
 
   &:hover {
     background-color: hsl(var(--primary-color-dark));

@@ -1,7 +1,9 @@
 import { renderBookmarkButton } from "./bookmark.js";
 import { setupNavbarMenu } from "./components/navbar-menu.js";
 import { setupOverlay } from "./components/overlay.js";
+import { setupBackProjectModal } from "./back-project-modal.js";
 
+// Navbar menu overlay
 const overlay = setupOverlay({
   element: () => {
     const element = document.createElement("div");
@@ -12,7 +14,7 @@ const overlay = setupOverlay({
     navbarMenu.close();
   },
 });
-
+// Navbar menu
 const navbarMenu = setupNavbarMenu({
   menuId: "navbar-menu",
   desktopBreakpoint: 1024,
@@ -39,4 +41,8 @@ const navbarMenu = setupNavbarMenu({
   animated: true,
 });
 
+// Bookmark button rendering
 renderBookmarkButton();
+
+// Setup of `back this project` modal
+setupBackProjectModal();

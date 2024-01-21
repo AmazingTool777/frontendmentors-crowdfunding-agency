@@ -1,0 +1,86 @@
+.feedback-modal {
+  max-width: 33.75rem; /* 540px */
+  width: calc(100% - 2 * var(--container-padding-x));
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem 2.5rem;
+
+  .feedback-modal__check-icon {
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .feedback-modal__title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feedback-modal__description {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 2.25rem 1.9375rem 2.625rem;
+
+    .feedback-modal__check-icon {
+      height: 4.375rem;
+      margin-bottom: 1.875rem; /* 30px */
+    }
+
+    .feedback-modal__title {
+      font-size: 1.125rem;
+      margin-bottom: 1.375rem;
+    }
+  }
+
+  @media screen and (min-width: 760px) {
+    padding: 2.5rem 2.375rem 2.75rem;
+
+    .feedback-modal__check-icon {
+      height: 4.875rem;
+      margin-bottom: 2.25rem; /* 36px */
+    }
+
+    .feedback-modal__title {
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feedback-modal__description {
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 2.75rem 2.8125rem 2.875rem;
+
+    .feedback-modal__check-icon {
+      height: 5.25rem;
+      margin-bottom: 2.625rem; /* 42px */
+    }
+
+    .feedback-modal__title {
+      font-size: 1.375rem;
+      margin-bottom: 1.125rem;
+    }
+
+    .feedback-modal__description {
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 3rem 3.25rem 3rem;
+
+    .feedback-modal__check-icon {
+      height: 5.625rem;
+      margin-bottom: 3rem; /* 48px */
+    }
+
+    .feedback-modal__title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

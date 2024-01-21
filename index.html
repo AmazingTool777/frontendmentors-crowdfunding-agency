@@ -65,7 +65,7 @@
               A beautiful & handcrafted monitor stand to reduce neck and eye strain.
             </p>
             <div class="flex justify-between items-center">
-              <button class="btn">Back this project</button>
+              <button id="back-project-btn" class="btn">Back this project</button>
               <button id="bookmark-btn" class="bookmark-btn flex items-center" aria-label="Bookmark">
                 <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg" class="bookmark-btn__icon">
                   <g fill="none" fill-rule="evenodd">
@@ -90,14 +90,14 @@
               <div class="statistics">
                 <div class="statistics__cell">
                   <p class="m-0">
-                    <strong>$89,914</strong>
+                    <strong id="highlight-backed-amount">$89,914</strong>
                     <br />
                     of $100,000 backed
                   </p>
                 </div>
                 <div class="statistics__cell">
                   <p class="m-0">
-                    <strong>5,007</strong>
+                    <strong id="highlight-backers-count">5,007</strong>
                     <br />
                     total backers
                   </p>
@@ -151,12 +151,13 @@
                 </p>
                 <footer class="pledge-card__footer">
                   <p class="pledge-card__quantity flex items-center m-0">
-                    <strong>101</strong>
+                    <strong data-pledge-quantity="bamboo-stand">101</strong>
                     <span>left</span>
                   </p>
-                  <button class="btn btn--small">Select Reward</button>
+                  <button class="btn btn--small" data-pledge-id="bamboo-stand">Select Reward</button>
                 </footer>
               </article>
+
               <!-- Black Edition stand pledge -->
               <article class="pledge-card">
                 <header class="pledge-card__header">
@@ -169,12 +170,13 @@
                 </p>
                 <footer class="pledge-card__footer">
                   <p class="pledge-card__quantity flex items-center m-0">
-                    <strong>64</strong>
+                    <strong data-pledge-quantity="black-edition-stand"> 64 </strong>
                     <span>left</span>
                   </p>
-                  <button class="btn btn--small">Select Reward</button>
+                  <button class="btn btn--small" data-pledge-id="black-edition-stand">Select Reward</button>
                 </footer>
               </article>
+
               <!-- Mahogany stand pledge -->
               <article class="pledge-card pledge-card--out-of-stock">
                 <header class="pledge-card__header">
@@ -190,10 +192,266 @@
                     <strong>0</strong>
                     <span>left</span>
                   </p>
-                  <button disabled class="btn btn--small">Out of stock</button>
+                  <button disabled class="btn btn--small" data-pledge-id="mahogany-stand">Out of stock</button>
                 </footer>
               </article>
             </div>
+
+            <!-- Back this project modal -->
+            <dialog id="back-project-modal" autofocus class="back-project-modal relative">
+              <div class="body-section-box">
+                <form id="modal-pledge-form">
+                  <!-- Close button -->
+                  <button
+                    formmethod="dialog"
+                    value="Cancel"
+                    aria-label="Close"
+                    title="Close"
+                    class="back-project-modal__close-btn"
+                  >
+                    <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+                        fill="#000"
+                        fill-rule="evenodd"
+                        opacity=".4"
+                      />
+                    </svg>
+                  </button>
+                  <h2 id="back-project-modal-title" class="back-project-modal__title">Back this project</h2>
+                  <p id="back-project-modal-description" class="back-project-modal__description description">
+                    Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+                  </p>
+                  <div class="back-project-modal__pledges-wrapper">
+                    <!-- Pledge with no reward -->
+                    <section
+                      id="modal-no-reward-pledge"
+                      class="modal-pledge"
+                      aria-labelledby="modal-no-reward-pledge-title"
+                    >
+                      <div class="modal-pledge__content-grid">
+                        <div class="modal-pledge__radio-item">
+                          <label class="modal-pledge__radio" title="Sélectionner" aria-label="Sélectionner">
+                            <input type="radio" name="pledge" id="no-reward-pledge" value="no-reward" />
+                            <span class="mark"></span>
+                          </label>
+                        </div>
+                        <div class="modal-pledge__header-item">
+                          <header class="modal-pledge__header">
+                            <h3 id="modal-no-reward-pledge-title" class="modal-pledge__title">
+                              <label for="no-reward-pledge">Pledge with no reward</label>
+                            </h3>
+                          </header>
+                        </div>
+                        <div class="modal-pledge__description-item">
+                          <p class="modal-pledge__description description">
+                            Choose to support us without a reward if you simply believe in our project. As a backer, you
+                            will be signed up to receive product updates via email.
+                          </p>
+                        </div>
+                        <div class="modal-pledge__quantity-item"></div>
+                      </div>
+                      <!-- Pledge input controls -->
+                      <div
+                        aria-hidden="true"
+                        class="modal-pledge__amount-enter"
+                        data-modal-pledge-amount-enter="no-reward-pledge-amount"
+                      >
+                        <label for="no-reward-pledge-amount" class="modal-pledge__amount-enter-label description">
+                          Enter your pledge
+                        </label>
+                        <div class="flex items-center" style="column-gap: 1rem">
+                          <div class="modal-pledge__amount-enter-control">
+                            <input
+                              type="number"
+                              id="no-reward-pledge-amount"
+                              disabled
+                              class="modal-pledge__amount-enter-input"
+                              min="0"
+                              value="0"
+                            />
+                          </div>
+                          <button class="btn btn--small" data-modal-pledge-amount-submit="no-reward">Continue</button>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- Bamboo Stand reward -->
+                    <section
+                      id="modal-bamboo-stand-pledge"
+                      class="modal-pledge"
+                      aria-labelledby="modal-bamboo-stand-pledge-title"
+                    >
+                      <div class="modal-pledge__content-grid">
+                        <div class="modal-pledge__radio-item">
+                          <label class="modal-pledge__radio" title="Sélectionner" aria-label="Sélectionner">
+                            <input type="radio" name="pledge" id="bamboo-stand-pledge" value="bamboo-stand" />
+                            <span class="mark"></span>
+                          </label>
+                        </div>
+                        <div class="modal-pledge__header-item">
+                          <header class="modal-pledge__header">
+                            <h3 id="modal-bamboo-stand-pledge-title" class="modal-pledge__title">
+                              <label for="bamboo-stand-pledge">Bamboo Stand</label>
+                            </h3>
+                            <p class="modal-pledge__amount">Pledge $25 or more</p>
+                          </header>
+                        </div>
+                        <div class="modal-pledge__description-item">
+                          <p class="modal-pledge__description description">
+                            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional
+                            campaign, and you’ll be added to a special Backer member list.
+                          </p>
+                        </div>
+                        <div class="modal-pledge__quantity-item">
+                          <p class="modal-pledge__quantity m-0">
+                            <strong data-pledge-quantity="bamboo-stand">101</strong>
+                            <span>left</span>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Pledge input controls -->
+                      <div
+                        aria-hidden="true"
+                        class="modal-pledge__amount-enter"
+                        data-modal-pledge-amount-enter="bamboo-stand-pledge-amount"
+                      >
+                        <label for="bamboo-stand-pledge-amount" class="modal-pledge__amount-enter-label description">
+                          Enter your pledge
+                        </label>
+                        <div class="flex items-center" style="column-gap: 1rem">
+                          <div class="modal-pledge__amount-enter-control">
+                            <input
+                              type="number"
+                              id="bamboo-stand-pledge-amount"
+                              class="modal-pledge__amount-enter-input"
+                              min="25"
+                              value="25"
+                            />
+                          </div>
+                          <button class="btn btn--small" data-modal-pledge-amount-submit="bamboo-stand">
+                            Continue
+                          </button>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- Black edition stand reward -->
+                    <section
+                      id="modal-black-edition-stand-pledge"
+                      class="modal-pledge"
+                      aria-labelledby="black-edition-stand-reward-pledge-title"
+                    >
+                      <div class="modal-pledge__content-grid">
+                        <div class="modal-pledge__radio-item">
+                          <label class="modal-pledge__radio" title="Sélectionner" aria-label="Sélectionner">
+                            <input
+                              type="radio"
+                              name="pledge"
+                              id="black-edition-stand-pledge"
+                              value="black-edition-stand"
+                            />
+                            <span class="mark"></span>
+                          </label>
+                        </div>
+                        <div class="modal-pledge__header-item">
+                          <header class="modal-pledge__header">
+                            <h3 id="black-edition-stand-reward-pledge-title" class="modal-pledge__title">
+                              <label for="black-edition-stand-pledge">Black Edition Stand</label>
+                            </h3>
+                            <p class="modal-pledge__amount">Pledge $75 or more</p>
+                          </header>
+                        </div>
+                        <div class="modal-pledge__description-item">
+                          <p class="modal-pledge__description description">
+                            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to
+                            our Backer member list. Shipping is included.
+                          </p>
+                        </div>
+                        <div class="modal-pledge__quantity-item">
+                          <p class="modal-pledge__quantity m-0">
+                            <strong data-pledge-quantity="black-edition-stand">64</strong>
+                            <span>left</span>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Pledge input controls -->
+                      <div
+                        aria-hidden="true"
+                        class="modal-pledge__amount-enter"
+                        data-modal-pledge-amount-enter="black-edition-stand-pledge-amount"
+                      >
+                        <label
+                          for="black-edition-stand-pledge-amount"
+                          class="modal-pledge__amount-enter-label description"
+                        >
+                          Enter your pledge
+                        </label>
+                        <div class="flex items-center" style="column-gap: 1rem">
+                          <div class="modal-pledge__amount-enter-control">
+                            <input
+                              type="number"
+                              id="black-edition-stand-pledge-amount"
+                              class="modal-pledge__amount-enter-input"
+                              min="75"
+                              value="75"
+                            />
+                          </div>
+                          <button class="btn btn--small" data-modal-pledge-amount-submit="black-edition-stand">
+                            Continue
+                          </button>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- Mahogany special edition reward -->
+                    <section id="mahogany-stand-reward-pledge" class="modal-pledge modal-pledge--out-of-stock">
+                      <div class="modal-pledge__content-grid">
+                        <div class="modal-pledge__radio-item">
+                          <label class="modal-pledge__radio" title="Sélectionner" aria-label="Sélectionner">
+                            <input type="radio" name="pledge" id="mahogany-stand-pledge" value="mahogany-stand" />
+                            <span class="mark"></span>
+                          </label>
+                        </div>
+                        <div class="modal-pledge__header-item">
+                          <header class="modal-pledge__header">
+                            <h3 id="mahogany-stand-reward-pledge-title" class="modal-pledge__title">
+                              <label for="mahogany-stand-pledge">Mahogany Edition</label>
+                            </h3>
+                            <p class="modal-pledge__amount">Pledge $200 or more</p>
+                          </header>
+                        </div>
+                        <div class="modal-pledge__description-item">
+                          <p class="modal-pledge__description description">
+                            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you.
+                            You’ll be added to our Backer member list. Shipping is included.
+                          </p>
+                        </div>
+                        <div class="modal-pledge__quantity-item">
+                          <p class="modal-pledge__quantity m-0">
+                            <strong>0</strong>
+                            <span>left</span>
+                          </p>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </form>
+              </div>
+            </dialog>
+
+            <!-- Feedback modal -->
+            <dialog id="feedback-modal" class="feedback-modal">
+              <form method="dialog" class="flex flex-column items-center">
+                <img src="assets/img/icon-check.svg" alt="Check" class="feedback-modal__check-icon" />
+                <h3 class="feedback-modal__title">Thanks for your support!</h3>
+                <p class="description feedback-modal__description text-center">
+                  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will
+                  get an email once our campaign is completed.
+                </p>
+                <button class="btn btn--small">Got it!</button>
+              </form>
+            </dialog>
           </section>
         </main>
       </div>

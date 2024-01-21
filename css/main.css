@@ -1,4 +1,5 @@
 @import url("./normalize.css");
+@import url("./animations.css");
 @import url("./globals.css");
 @import url("./utils.css");
 @import url("./components/index.css");
@@ -6,3 +7,5 @@
 @import url("./features/header.css");
 @import url("./features/statistics.css");
 @import url("./features/about.css");
+@import url("./features/back-project-modal.css");
+@import url("./features/feedback-modal.css");

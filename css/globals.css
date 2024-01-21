@@ -35,3 +35,20 @@ body {
   font-family: Commissioner;
   background-color: #fafafa;
 }
+
+dialog {
+  background-color: #fff;
+  animation: fade-out 0.4s ease-out;
+
+  &::backdrop {
+    background-color: rgba(0 0 0 / 0.5);
+  }
+
+  &[open] {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  &[open]::backdrop {
+    animation: backdrop-fade-in 0.4s forwards;
+  }
+}

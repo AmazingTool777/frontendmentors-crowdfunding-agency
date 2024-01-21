@@ -1,7 +1,7 @@
 @import url("./button.css");
 @import url("./body-section-box.css");
 
-p.description {
+.description {
   color: hsl(var(--neutral-color-light));
   font-size: 0.875rem;
   line-height: 1.7;
