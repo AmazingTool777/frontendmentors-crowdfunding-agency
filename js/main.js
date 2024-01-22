@@ -2,6 +2,7 @@ import { renderBookmarkButton } from "./bookmark.js";
 import { setupNavbarMenu } from "./components/navbar-menu.js";
 import { setupOverlay } from "./components/overlay.js";
 import { setupBackProjectModal } from "./back-project-modal.js";
+import { setupProjectDescription } from "./project-description.js";
 
 // Navbar menu overlay
 const overlay = setupOverlay({
@@ -43,6 +44,9 @@ const navbarMenu = setupNavbarMenu({
 
 // Bookmark button rendering
 renderBookmarkButton();
+
+// Setup of the project description content
+setupProjectDescription();
 
 // Setup of `back this project` modal
 setupBackProjectModal();
