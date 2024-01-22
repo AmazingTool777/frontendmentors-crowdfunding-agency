@@ -47,6 +47,7 @@
   border-radius: 0.5rem;
   border: 1px solid #dbdbdb;
   padding: 1.5rem;
+  transform-origin: 0 0;
 
   .pledge-card__header,
   .pledge-card__footer {

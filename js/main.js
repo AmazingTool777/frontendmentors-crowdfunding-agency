@@ -4,6 +4,7 @@ import { setupOverlay } from "./components/overlay.js";
 import { setupBackProjectModal } from "./back-project-modal.js";
 import { setupProjectDescription } from "./project-description.js";
 import { setupStatsNumbersAnimation } from "./stats-numbers.js";
+import { setupPledgesAnimation } from "./pledges-animation.js";
 
 // Navbar menu overlay
 const overlay = setupOverlay({
@@ -51,6 +52,9 @@ setupProjectDescription();
 
 // The stats numbers animation
 setupStatsNumbersAnimation();
+
+// Setup of the animation of the pledges articles
+setupPledgesAnimation();
 
 // Setup of `back this project` modal
 setupBackProjectModal();
