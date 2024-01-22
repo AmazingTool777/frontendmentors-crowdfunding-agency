@@ -32,6 +32,7 @@ export function setupBackProjectModal() {
     store.dispatch({
       type: FEEDBACK_CLOSED,
     });
+    document.body.style.overflow = "auto";
   }
 
   feedbackModal.addEventListener("close", handleFeedbackModalClose);
@@ -135,6 +136,7 @@ export function setupBackProjectModal() {
         const state = store.getState();
         if (state.thereIsFeedback && !backProjectModal.getAttribute("open")) {
           feedbackModal.showModal();
+          document.body.style.overflow = "hidden";
         }
       }, 400);
     }

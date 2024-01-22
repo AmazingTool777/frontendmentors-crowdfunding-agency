@@ -3,6 +3,7 @@ import { setupNavbarMenu } from "./components/navbar-menu.js";
 import { setupOverlay } from "./components/overlay.js";
 import { setupBackProjectModal } from "./back-project-modal.js";
 import { setupProjectDescription } from "./project-description.js";
+import { setupStatsNumbersAnimation } from "./stats-numbers.js";
 
 // Navbar menu overlay
 const overlay = setupOverlay({
@@ -47,6 +48,9 @@ renderBookmarkButton();
 
 // Setup of the project description content
 setupProjectDescription();
+
+// The stats numbers animation
+setupStatsNumbersAnimation();
 
 // Setup of `back this project` modal
 setupBackProjectModal();
