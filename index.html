@@ -199,7 +199,13 @@
             </div>
 
             <!-- Back this project modal -->
-            <dialog id="back-project-modal" autofocus class="back-project-modal relative">
+            <dialog
+              id="back-project-modal"
+              aria-labelledby="back-project-modal-title"
+              aria-describedby="back-project-modal-description"
+              autofocus
+              class="back-project-modal relative"
+            >
               <div class="body-section-box">
                 <form id="modal-pledge-form">
                   <!-- Close button -->
@@ -442,10 +448,10 @@
             </dialog>
 
             <!-- Feedback modal -->
-            <dialog id="feedback-modal" class="feedback-modal">
+            <dialog id="feedback-modal" aria-labelledby="feedback-modal-title" class="feedback-modal">
               <form method="dialog" class="flex flex-column items-center">
                 <img src="assets/img/icon-check.svg" alt="Check" class="feedback-modal__check-icon" />
-                <h3 class="feedback-modal__title">Thanks for your support!</h3>
+                <h3 id="feedback-modal-title" class="feedback-modal__title">Thanks for your support!</h3>
                 <p class="description feedback-modal__description text-center">
                   Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will
                   get an email once our campaign is completed.
