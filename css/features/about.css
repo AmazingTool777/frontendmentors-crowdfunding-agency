@@ -49,6 +49,10 @@
   padding: 1.5rem;
   transform-origin: 0 0;
 
+  &.pledge-card--out-of-stock {
+    opacity: 0.5;
+  }
+
   .pledge-card__header,
   .pledge-card__footer {
     display: flex;
@@ -119,9 +123,5 @@
     .pledge-card__title {
       font-size: 1.125rem; /* 18px */
     }
-  }
-
-  &.pledge-card--out-of-stock {
-    opacity: 0.5;
   }
 }

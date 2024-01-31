@@ -70,8 +70,7 @@ export function setupBackProjectModal() {
 
     modalPledgeRadio.addEventListener("change", handlePledgeRadioChecked);
 
-    const inputId = `${pledge.id}-pledge-amount`;
-    const modalPledgeAmountInput = document.getElementById(inputId);
+    const pledgeArticle = document.querySelector(`[data-pledge-article="${pledge.id}"]`);
     const selectRewardBtn = document.querySelector(`[data-pledge-id=${pledge.id}]`);
 
     function handlePledgeSelected() {
@@ -84,6 +83,8 @@ export function setupBackProjectModal() {
 
     selectRewardBtn?.addEventListener("click", handlePledgeSelected);
 
+    const inputId = `${pledge.id}-pledge-amount`;
+    const modalPledgeAmountInput = document.getElementById(inputId);
     const modalPledgeAmountSection = document.querySelector(`[data-modal-pledge-amount-enter="${inputId}"]`);
     const modalPledgeAmountBtn = document.querySelector(`[data-modal-pledge-amount-submit="${pledge.id}"]`);
     const pledgeQuantityElts = document.querySelectorAll(`[data-pledge-quantity="${pledge.id}"]`);
@@ -110,6 +111,7 @@ export function setupBackProjectModal() {
         modalPledgeAmountSection?.remove();
         modalPledgeItem?.classList?.remove("modal-pledge--selected");
         modalPledgeItem?.classList?.add("modal-pledge--out-of-stock");
+        pledgeArticle?.classList.add("pledge-card--out-of-stock");
         if (selectRewardBtn) {
           selectRewardBtn.innerHTML = "Out of stock";
           selectRewardBtn.disabled = true;
