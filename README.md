@@ -280,7 +280,7 @@ Here is list of useful resources that helped during this project:
 
 ## Author
 
-- Github: [@LordSeven777](https://github.com/LordSeven777)
+- Github: [@AmazingTool777](https://github.com/AmazingTool777)
 - Instagram: [@amazing_tool](https://www.instagram.com/amazing_tool/)
 
 ## Acknowledgement
