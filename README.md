@@ -41,7 +41,7 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ### Links
 
-The solution is live [here](https://lordseven777.github.io/frontendmentors-crowdfunding-agency/).
+The solution is live [here](https://AmazingTool777.github.io/frontendmentors-crowdfunding-agency/).
 
 ## My process
 
